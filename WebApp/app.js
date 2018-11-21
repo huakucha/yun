@@ -1,8 +1,14 @@
 var express = require('express');
 var app = express();
 
+app.use(express.static('public'));
 app.get('/', function (req, res) {
- res.send('我在想到底是解你风情,还是解你衣扣...');
+ res.send(`
+    <html>
+        <p>xxaaa</p>
+        <img src="/a.webp" />
+    </html>
+ `);
 });
 
 var server = app.listen(3000, function () {
@@ -11,4 +17,3 @@ var server = app.listen(3000, function () {
 
   console.log('Example app listening at http://%s:%s', host, port);
 });
-
